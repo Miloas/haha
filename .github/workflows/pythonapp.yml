@@ -23,5 +23,6 @@ jobs:
       env:
         ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
         OPENDOTA_API_KEY: ${{ secrets.OPENDOTA_API_KEY }}
+        WEIBO_ACCESS_TOKEN: ${{ secrets.WEIBO_ACCESS_TOKEN }}
       run: |
-        python dota2.py
+        python weibo.py

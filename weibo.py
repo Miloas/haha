@@ -1,3 +1,5 @@
+import requests
+import os
 from typing import Optional
 import requests
 import os
@@ -17,3 +19,17 @@ def isAncient():
     return rank_tier != None and int(rank_tier[0]) >= 6
 
 print(isAncient())
+
+
+url = 'https://api.weibo.com/2/statuses/share.json'
+access_token = os.getenv('WEIBO_ACCESS_TOKEN')
+link = 'https://github.com/Miloas/haha'
+
+msg = '恭喜哈哈，终成万古！' if isAncient() else '没有'
+
+payload = {
+    'access_token': access_token,
+    'status': f'{msg} {link}'
+}
+
+requests.post(url, data=payload)
