@@ -1,4 +1,3 @@
-import requests
 import os
 from typing import Optional
 import requests
